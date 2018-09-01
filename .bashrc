@@ -22,9 +22,9 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Nice Prompt
-export PS1="\[\e[31m\]\u\[\e[35m\] in \[\e[36m\]\W \[\e[33m\]λ \[\e[0m\]"
+export PS1="\[\e[92m\]\u\[\e[35m\] in \[\e[36m\]\W \[\e[33m\]↠  \[\e[0m\]"
 # It looks like this:
-# User in ~ λ 
+# User in Directory ↠
 
 # aliases
 alias ..="cd .."
@@ -36,7 +36,7 @@ alias l="ls -CF"
 
 # windows interfacing
 windows_drive="/mnt/c/"
-windows_username="tower"
+windows_username="Alf"
 windows_userfolder="$windows_drive/Users/$windows_username"
 alias home="cd $windows_userfolder"
 alias cdd="home && cd Desktop"
@@ -51,11 +51,9 @@ fi
 alias ddir="pwd >> $default_dir_path"
 alias disable_ddir="rm $default_dir_path"
 
-# NVM Crap
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
 # node
 alias no="node --experimental-modules"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
