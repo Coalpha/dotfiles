@@ -54,6 +54,11 @@ alias disable_ddir="rm $default_dir_path"
 # node
 alias no="node --experimental-modules"
 
+# auto sudo
+alias apt-get="sudo apt-get"
+alias apt="sudo apt"
+alias screen="sudo screen"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
