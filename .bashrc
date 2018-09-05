@@ -11,14 +11,14 @@ HISTFILESIZE=2000
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+  alias ls='ls --color=auto'
+  #alias dir='dir --color=auto'
+  #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
 fi
 
 # Nice Prompt
@@ -45,7 +45,7 @@ alias code="cdd && cd coalpha.github.io"
 alias clip="clip.exe"
 
 # sync
-alias sync="sudo $DOTFILES_DIR/sync.sh $DOTFILES_DIR $WIN_HOME"
+alias sync="$DOTFILES_DIR/sync.sh $DOTFILES_DIR $WIN_HOME"
 
 # default dir
 default_dir_path=~/default_dir.txt
