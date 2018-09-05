@@ -35,21 +35,27 @@ alias lsa="ls -A"
 alias l="ls -CF"
 
 # windows interfacing
-windows_drive="/mnt/c/"
-windows_username="Alf"
-windows_userfolder="$windows_drive/Users/$windows_username"
-alias home="cd $windows_userfolder"
+WIN_ROOT="/mnt/c"
+WIN_USERNAME="Alf"
+export WIN_HOME="$WIN_ROOT/Users/$WIN_USERNAME"
+export DOTFILES_DIR="$WIN_HOME/Desktop/dotfiles"
+alias home="cd $WIN_HOME"
 alias cdd="home && cd Desktop"
 alias code="cdd && cd coalpha.github.io"
 alias clip="clip.exe"
 
+# sync
+alias sync="sudo $DOTFILES_DIR/sync.sh $DOTFILES_DIR $WIN_HOME"
+
 # default dir
-default_dir_path="~/default_dir.txt"
+default_dir_path=~/default_dir.txt
 if [ -f default_dir_path ]; then
-    cd default_dir_path
+    cd "$(<default_dir_path)"
 fi
-alias ddir="pwd >> $default_dir_path"
-alias disable_ddir="rm $default_dir_path"
+alias sddir="pwd > $default_dir_path"
+# Set Default Directory
+alias dddir="rm $default_dir_path"
+# Disable Default Directory
 
 # node
 alias no="node --experimental-modules"

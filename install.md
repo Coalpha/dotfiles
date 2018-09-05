@@ -1,6 +1,13 @@
+# apt
 clang
 ffmpeg
 gcc
 haskell-platform
-nvm
 openjdk-11-jdk-headless
+
+# non apt
+nvm
+
+# node
+eslint
+ytdl
