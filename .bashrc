@@ -48,14 +48,11 @@ alias clip="clip.exe"
 alias sync="$DOTFILES_DIR/sync.sh $DOTFILES_DIR $WIN_HOME"
 
 # default dir
-default_dir_path=~/default_dir.txt
-if [ -f default_dir_path ]; then
-    cd "$(<default_dir_path)"
+DDIR_PATH=~/DDIR.txt
+if [ -e $DDIR_PATH ]; then
+    cd "$(<$DDIR_PATH)"
 fi
-alias sddir="pwd > $default_dir_path"
-# Set Default Directory
-alias dddir="rm $default_dir_path"
-# Disable Default Directory
+alias ddir="$DOTFILES_DIR/ddir.sh $DDIR_PATH"
 
 # node
 alias no="node --experimental-modules"
