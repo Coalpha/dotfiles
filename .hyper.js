@@ -1,65 +1,56 @@
-// Future versions of Hyper may add additional config options,
-// which will not automatically be merged into this file.
 // See https://hyper.is#cfg for all currently supported options.
-const backgroundColor   = '#293340';
-const foregroundColor   = '#CDD2E9';
-const cursorColor       = '#2C85F7';
-const borderColor       = '#323E4D';
-const colors            = {
-      black             : backgroundColor,
-      red               : '#E17E85',
-      green             : '#61BA86',
-      yellow            : '#FFEC8E',
-      blue              : '#2090E0', // original #4CB2FF
-      magenta           : '#BE86E3',
-      cyan              : '#2DCED0',
-      white             : foregroundColor,
-      lightBlack        : '#546386',
-      lightRed          : '#E17E85',
-      lightGreen        : '#5bfa7d',
-      lightYellow       : '#FFB68E',
-      lightBlue         : '#4CB2FF',
-      lightMagenta      : '#BE86E3',
-      lightCyan         : '#2DCED0',
-      lightWhite        : foregroundColor
+const backgroundColor = '#293340';
+const foregroundColor = '#CDD2E9';
+const cursorColors = [
+  '#2C85F7',
+  'rgba(255, 165, 0, 0.8)',
+  'rgba(248, 28, 229, 0.8)',
+  '#28E2FF',
+  '#6CF028',
+  'rgba(219, 255, 40, 0.8)',
+  'rgba(255, 72, 40, 0.8)',
+  'rgba(180, 40, 255, 0.8)',
+];
+const borderColor = '#323E4D';
+const colors = {
+  black: backgroundColor,
+  red: '#E17E85',
+  green: '#61BA86',
+  yellow: '#FFEC8E',
+  blue: '#2090E0', // original #4CB2FF
+  magenta: '#BE86E3',
+  cyan: '#2DCED0',
+  white: foregroundColor,
+  lightBlack: '#546386',
+  lightRed: '#E17E85',
+  lightGreen: '#5bfa7d',
+  lightYellow: '#FFB68E',
+  lightBlue: '#4CB2FF',
+  lightMagenta: '#BE86E3',
+  lightCyan: '#2DCED0',
+  lightWhite: foregroundColor,
 };
 module.exports = {
   config: {
-    // choose either `'stable'` for receiving highly polished,
-    // or `'canary'` for less polished but more frequent updates
-    updateChannel: 'stable',
-
-    // default font size in pixels for all tabs
+    // choose `'canary'` to do weird things!
+    updateChannel: 'stable', // 'stable' | 'canary'
+    // I'm blind
     fontSize: 16,
-
-    // font family with optional fallbacks
     fontFamily: 'Ubuntu Mono, monospace',
-
     // default font weight: 'normal' or 'bold'
     fontWeight: 'normal',
-
     // font weight for bold characters: 'normal' or 'bold'
     fontWeightBold: 'bold',
-
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(248, 28, 229, 0.8)',
-
+    cursorColor: cursorColors[0 | Math.random() * 8],
     // terminal text color under BLOCK cursor
-    cursorAccentColor: '#000',
-
-    // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
-    cursorShape: 'BLOCK',
-
+    cursorAccentColor: 'black', // default: black
+    cursorShape: 'BLOCK', // 'BEAM' | 'UNDERLINE' | 'BLOCK'
     // set to `true` (without backticks and without quotes) for blinking cursor
     cursorBlink: false,
-
     // terminal selection color
     selectionColor: 'rgba(248, 28, 229, 0.3)',
-
     // border color (window, tabs)
-    borderColor: '#333',
-
-    // custom CSS to embed in the main window
     termCSS: `
       .terminal .xterm-selection div {
         background: #9198A2 !important;
@@ -71,84 +62,37 @@ module.exports = {
         font-weight: normal !important;
       }
     `,
-    // custom CSS to embed in the terminal window
     css: `
       .terminal .xterm-selection div {
         background: #9198A2 !important;
       }
     `,
-
-    // if you're using a Linux setup which show native menus, set to false
-    // default: `true` on Linux, `true` on Windows, ignored on macOS
-    showHamburgerMenu: '',
-
-    // set to `false` (without backticks and without quotes) if you want to hide the minimize, maximize and close buttons
-    // additionally, set to `'left'` if you want them on the left, like in Ubuntu
-    // default: `true` (without backticks and without quotes) on Windows and Linux, ignored on macOS
-    showWindowControls: '',
-
+    showHamburgerMenu: true, // Boolean
+    showWindowControls: '', // Boolean | 'left'
     // custom padding (CSS format, i.e.: `top right bottom left`)
     padding: '12px 14px',
-
     foregroundColor,
     backgroundColor,
     borderColor,
     colors,
-
-    // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
-    // if left empty, your system's login shell will be used by default
-    //
-    // Windows
-    // - Make sure to use a full path if the binary name doesn't work
-    // - Remove `--login` in shellArgs
-    //
-    // Bash on Windows
-    // - Example: `C:\\Windows\\System32\\bash.exe`
-    //
-    // PowerShell on Windows
-    // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
     shell: 'C:\\Windows\\System32\\bash.exe',
-
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
     shellArgs: ['--login'],
-
     // for environment variables
     env: {},
-
-    // set to `false` for no bell
-    bell: false,
-
-    // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
-    copyOnSelect: false,
-
-    // if `true` (without backticks and without quotes), hyper will be set as the default protocol client for SSH
+    bell: false, // Boolean
+    copyOnSelect: false, // Boolean
     defaultSSHApp: true,
-
-    // if `true` (without backticks and without quotes), on right click selected text will be copied or pasted if no
-    // selection is present (`true` by default on Windows and disables the context menu feature)
-    // quickEdit: true,
-
-    // URL to custom bell
-    // bellSoundURL: 'http://example.com/bell.mp3',
-
-    // for advanced config flags please refer to https://hyper.is/#cfg
   },
-
   // a list of plugins to fetch and install from npm
   // format: [@org/]project[#version]
-  // examples:
-  //   `hyperpower`
-  //   `@company/project`
-  //   `project#1.0.1`
   plugins: [],
-
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
   // to load it and avoid it being `npm install`ed
   localPlugins: [],
-
   keymaps: {
-    "tab:new": "alt+n",
+    'tab:new': 'alt+n',
   },
 };
