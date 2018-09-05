@@ -78,7 +78,7 @@ module.exports = {
     shell: 'C:\\Windows\\System32\\bash.exe',
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
-    shellArgs: ['--login'],
+    shellArgs: [],
     // for environment variables
     env: {},
     bell: false, // Boolean
