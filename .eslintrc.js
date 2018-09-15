@@ -1,5 +1,5 @@
 module.exports = {
-  extends: "airbnb-base",
+  extends: 'airbnb-base',
   rules: {
     'no-plusplus': 'off',
     'no-bitwise': 'off',

@@ -37,10 +37,12 @@ alias l="ls -CF"
 # windows interfacing
 WIN_ROOT="/mnt/c"
 WIN_USERNAME="Alf"
+STARBOUND_PATH="/mnt/i/SteamLibrary/steamapps/common/Starbound"
 export WIN_HOME="$WIN_ROOT/Users/$WIN_USERNAME"
 export DOTFILES_DIR="$WIN_HOME/Desktop/dotfiles"
 alias home="cd $WIN_HOME"
 alias cdd="home && cd Desktop"
+alias cds="cd $STARBOUND_PATH"
 alias code="cdd && cd coalpha.github.io"
 alias clip="clip.exe"
 
@@ -52,10 +54,14 @@ DDIR_PATH=~/DDIR.txt
 if [ -e $DDIR_PATH ]; then
     cd "$(<$DDIR_PATH)"
 fi
-alias ddir="$DOTFILES_DIR/ddir.sh $DDIR_PATH"
 
 # node
 alias no="node --experimental-modules"
+
+# sh files in dotfiles
+alias walk="$DOTFILES_DIR/walk.sh"
+alias Starbound="$DOTFILES_DIR/Starbound.sh $STARBOUND_PATH"
+alias ddir="$DOTFILES_DIR/ddir.sh $DDIR_PATH"
 
 # auto sudo
 alias apt-get="sudo apt-get"
