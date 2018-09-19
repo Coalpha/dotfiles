@@ -47,7 +47,7 @@ alias code="cdd && cd coalpha.github.io"
 alias clip="clip.exe"
 
 # sync
-alias sync="$DOTFILES_DIR/sync.sh $DOTFILES_DIR $WIN_HOME"
+alias sync="sudo $DOTFILES_DIR/sync.sh $DOTFILES_DIR $WIN_HOME"
 
 # default dir
 DDIR_PATH=~/DDIR.txt
@@ -68,7 +68,7 @@ alias apt-get="sudo apt-get"
 alias apt="sudo apt"
 alias screen="sudo screen"
 
-# Commend out NVM for speed
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# Comment out NVM for speed
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
