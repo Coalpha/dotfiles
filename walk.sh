@@ -12,4 +12,4 @@ javac $1
 echo "${green}Running code!${reset}"
 echo "${cyan}Output:${reset}"
 echo
-java $filename
+java $filename $2 $3 $4

@@ -1,3 +1,5 @@
 WIN_ROOT="/mnt/c"
 WIN_USERNAME="Alf"
 STARBOUND_PATH="/mnt/i/SteamLibrary/steamapps/common/Starbound"
+WIN_HOME="$WIN_ROOT/Users/$WIN_USERNAME"
+DOTFILES_DIR="$WIN_HOME/Desktop/dotfiles"

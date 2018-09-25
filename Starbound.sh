@@ -5,6 +5,10 @@ magenta=`tput setaf 5`
 
 echo "The absolute path is: \"$1\""
 cd $1
+if [ $2 = "help" ]; then
+  echo "Starbound pack|unpack asset|json|player path1.something [output.json]"
+  exit 0
+fi
 if test "$#" -lt 3; then
   echo "${red}Illegal number of parameters$reset"
   exit 1
@@ -13,8 +17,6 @@ if [ $2 = "pack" ]; then
   pack=true
 elif [ $2 = "unpack" ]; then
   pack=false
-elif [ $2 = "help" ]; then
-  echo "Starbound pack|unpack asset|json|player path1.something [output.json]"
 else
   echo "$red\"$2\" is not \"pack\" or \"unpack!\""
   exit 1

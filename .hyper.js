@@ -67,7 +67,7 @@ module.exports = {
         background: #9198A2 !important;
       }
     `,
-    showHamburgerMenu: true, // Boolean
+    showHamburgerMenu: false, // Boolean
     showWindowControls: '', // Boolean | 'left'
     // custom padding (CSS format, i.e.: `top right bottom left`)
     padding: '12px 14px',
@@ -81,7 +81,7 @@ module.exports = {
     shellArgs: [],
     // for environment variables
     env: {},
-    bell: false, // Boolean
+    bell: true, // this doesn't do anything
     copyOnSelect: false, // Boolean
     defaultSSHApp: true,
   },

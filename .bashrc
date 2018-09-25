@@ -68,6 +68,7 @@ alias apt-get="sudo apt-get"
 alias apt="sudo apt"
 alias screen="sudo screen"
 
+alias yarn="npm"
 # Comment out NVM for speed
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
