@@ -57,6 +57,9 @@ fi
 
 # node
 alias no="node --experimental-modules"
+alias ns="npm start"
+alias ni="npm i"
+alias nd="npm i -D"
 
 # sh files in dotfiles
 alias walk="$DOTFILES_DIR/walk.sh"
@@ -67,7 +70,3 @@ alias ddir="$DOTFILES_DIR/ddir.sh $DDIR_PATH"
 alias apt-get="sudo apt-get"
 alias apt="sudo apt"
 alias screen="sudo screen"
-# Comment out NVM for speed
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
