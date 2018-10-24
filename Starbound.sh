@@ -1,3 +1,4 @@
+#!/bin/sh
 reset=`tput sgr0`
 red=`tput setaf 1`
 green=`tput setaf 2`

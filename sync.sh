@@ -8,12 +8,14 @@ yellow=`tput setaf 11`
 home_bashrc="$(realpath ~/.bashrc)"
 home_profile="$(realpath ~/.profile)"
 etc_env="/etc/environment"
+winhome_hyper="$2/.hyper.js"
+appdata_vscode_settings="$2/AppData/Roaming/Code/User/settings.json"
+
 copy_bashrc="$1/.bashrc"
 copy_profile="$1/.profile"
 copy_env="$1/environment"
-
-winhome_hyper="$2/.hyper.js"
 copy_hyper="$1/.hyper.js"
+copy_vscode_settings="$1/settings.json"
 
 echo "${blue}Comparing $magenta$1$reset to $cyan$(realpath ~)$reset"
 echo
@@ -41,9 +43,10 @@ else
   echo "${yellow}Replaced $cyan$etc_env$reset with $magenta$copy_env!"
 fi
 echo
-echo "Looking for .hyper.js in $2"
+echo "${blue}Comparing select files within $magenta$1$reset to $cyan$2$reset"
+echo
 if [ $2 ]; then
-  echo
+  echo "Looking for .hyper.js in $2"
   if [ $winhome_hyper -nt $copy_hyper ]; then
     cat $winhome_hyper > $copy_hyper
     echo "${green}Replaced $magenta$copy_hyper$reset with $cyan$winhome_hyper!"
@@ -52,6 +55,14 @@ if [ $2 ]; then
     echo "${yellow}Replaced $cyan$winhome_hyper$reset with $magenta$copy_hyper!"
   fi
   echo
+  echo "Looking for settings.json in $appdata_vscode_settings"
+  if [$appdata_vscode_settings -nt $copy_vscode_settings]; then
+    cat $appdata_vscode_settings > $copy_vscode_settings
+    echo "${green}Replaced $magenta$copy_vscode_settings$reset with $cyan$appdata_vscode_settings!"
+  else
+    cat $copy_vscode_settings > $appdata_vscode_settings
+    echo "${yellow}Replaced $magenta$appdata_vscode_settings$reset with $cyan$copy_vscode_settings!"
+  fi
 else
-  echo "${reset}What the fuck?! Couldn't find the windows_userfolder!"
+  echo "${reset}Couldn't find the windows_userfolder?!"
 fi

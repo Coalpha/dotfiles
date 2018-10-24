@@ -1,3 +1,6 @@
+# this file allows execution of .class files
+# why is it called "walk.sh"?
+# well, with the speed that java "runs" at, can you really call it running?
 green=`tput setaf 2`
 reset=`tput sgr0`
 yellow=`tput setaf 11`
@@ -12,4 +15,5 @@ javac $1
 echo "${green}Running code!${reset}"
 echo "${cyan}Output:${reset}"
 echo
-java $filename $2 $3 $4
+shift
+java $filename $@

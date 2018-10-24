@@ -45,6 +45,8 @@ alias cdd="home && cd Desktop"
 alias cds="cd $STARBOUND_PATH"
 alias code="cdd && cd coalpha.github.io"
 alias clip="clip.exe"
+alias cmd="$WIN_ROOT/Windows/System32/cmd.exe"
+alias ps="$WIN_ROOT/Windows/System32/WindowsPowerShell/v1.0/powershell.exe"
 
 # sync
 alias sync="sudo $DOTFILES_DIR/sync.sh $DOTFILES_DIR $WIN_HOME"

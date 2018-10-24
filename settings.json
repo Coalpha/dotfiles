@@ -1,0 +1,12 @@
+{
+  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "workbench.colorTheme": "One Dark Pro",
+  "editor.tabSize": 2,
+  "window.zoomLevel": 0.4,
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe",
+  "terminal.integrated.fontFamily": "Ubuntu Mono, Consolas",
+  "terminal.integrated.fontSize": 15,
+  "sync.gist": "7fa21cc77c4141e0861eef84d826f022",
+  "sync.autoUpload": true,
+  "sync.autoDownload": true
+}
