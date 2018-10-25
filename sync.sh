@@ -1,6 +1,3 @@
-magenta=`tput setaf 5`
-cyan=`tput setaf 6`
-green=`tput setaf 2`
 reset=`tput sgr0`
 blue=`tput setaf 4`
 yellow=`tput setaf 11`
@@ -8,61 +5,82 @@ yellow=`tput setaf 11`
 home_bashrc="$(realpath ~/.bashrc)"
 home_profile="$(realpath ~/.profile)"
 etc_env="/etc/environment"
+etc_apt_sources="/etc/apt/sources.list"
 winhome_hyper="$2/.hyper.js"
 appdata_vscode_settings="$2/AppData/Roaming/Code/User/settings.json"
 
 copy_bashrc="$1/.bashrc"
 copy_profile="$1/.profile"
 copy_env="$1/environment"
+copy_apt_sources="$1/sources.list"
 copy_hyper="$1/.hyper.js"
 copy_vscode_settings="$1/settings.json"
 
-echo "${blue}Comparing $magenta$1$reset to $cyan$(realpath ~)$reset"
+left="$yellow<==$reset"
+right="$blue==>$reset"
+do_output () {
+  printf "%14s %s\n" $1 "Copy $a Source"
+  echo
+}
 echo
+echo "WINHOME: $2"
+echo "DOTFILES: $1"
 if [ $home_bashrc -nt $copy_bashrc ]; then
   cat $home_bashrc > $copy_bashrc
-  echo "${green}Replaced $magenta$copy_bashrc$reset with $cyan$home_bashrc!"
+  a=$left
 else
   cat $copy_bashrc > $home_bashrc
-  echo "${yellow}Replaced $cyan$home_bashrc$reset with $magenta$copy_bashrc!"
+  a=$right
 fi
-echo
+do_output .bashrc
 if [ $home_profile -nt $copy_profile ]; then
   cat $home_profile > $copy_profile
-  echo "${green}Replaced $magenta$copy_profile$reset with $cyan$home_profile!"
+  a=$left
 else
   cat $copy_profile > $home_profile
-  echo "${yellow}Replaced $cyan$home_profile$reset with $magenta$copy_profile!"
+  a=$right
 fi
-echo
+do_output .profile
 if [ $etc_env -nt $copy_env ]; then
   cat $etc_env > $copy_env
-  echo "${green}Replaced $magenta$copy_env$reset with $cyan$etc_env!"
+  a=$left
 else
   cat $copy_env > $etc_env
-  echo "${yellow}Replaced $cyan$etc_env$reset with $magenta$copy_env!"
+  a=$right
 fi
-echo
-echo "${blue}Comparing select files within $magenta$1$reset to $cyan$2$reset"
-echo
+do_output enviornment
+if [ $etc_apt_sources -nt $copy_apt_sources ]; then
+  cat $etc_apt_sources > $copy_apt_sources
+  a=$left
+else
+  cat $copy_apt_sources > $etc_apt_sources
+  a=$right
+fi
+do_output apt sources
 if [ $2 ]; then
-  echo "Looking for .hyper.js in $2"
   if [ $winhome_hyper -nt $copy_hyper ]; then
     cat $winhome_hyper > $copy_hyper
-    echo "${green}Replaced $magenta$copy_hyper$reset with $cyan$winhome_hyper!"
+    a=$left
   else
     cat $copy_hyper > $winhome_hyper
-    echo "${yellow}Replaced $cyan$winhome_hyper$reset with $magenta$copy_hyper!"
+    a=$right
   fi
-  echo
-  echo "Looking for settings.json in $appdata_vscode_settings"
+  do_output .hyper.js
   if [ $appdata_vscode_settings -nt $copy_vscode_settings ]; then
     cat $appdata_vscode_settings > $copy_vscode_settings
-    echo "${green}Replaced $magenta$copy_vscode_settings$reset with $cyan$appdata_vscode_settings!"
+    a=$left
   else
     cat $copy_vscode_settings > $appdata_vscode_settings
-    echo "${yellow}Replaced $magenta$appdata_vscode_settings$reset with $cyan$copy_vscode_settings!"
+    a=$right
   fi
+  do_output settings.json
 else
   echo "${reset}Couldn't find the windows_userfolder?!"
+fi
+MSG=${4:-Auto commit of dotfiles. Courtesy of sync.sh}
+if [ $3 = "save" ]; then
+  cd $1
+  git add .
+  git commit -m $MSG
+  git push
 fi

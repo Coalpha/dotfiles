@@ -26,6 +26,9 @@
   // No! I don't want that!
   "debug.openDebug": "neverOpen",
   "debug.internalConsoleOptions": "neverOpen",
-  "debug.showInStatusBar": "never"
+  "debug.showInStatusBar": "never",
   // stop showing me the debug thing
+  "workbench.colorCustomizations": {
+    "editorWarning.foreground": "#FFAA0044"
+  }
 }
