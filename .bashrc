@@ -45,7 +45,8 @@ export DOTFILES="$C/dotfiles"
 # sh files in dotfiles
 # maybe think of adding the dotfiles directory to the PATH
 . "$DOTFILES/paths.sh"
-alias sync="bash $DOTFILES/sync.sh $DOTFILES $WIN_HOME" # have to provide these as arguments since sudo
+alias sync="bash $DOTFILES/sync.sh $DOTFILES $WIN_HOME"
+alias ssync="sudo bash $DOTFILES/sync.sh $DOTFILES $WIN_HOME"
 alias walk="$DOTFILES/walk.sh"
 alias Starbound="bash $DOTFILES/Starbound.sh"
 alias ddir="$DOTFILES/ddir.sh"
