@@ -81,6 +81,6 @@ MSG=${4:-Auto commit of dotfiles. Courtesy of sync.sh}
 if [ $3 = "save" ]; then
   cd $1
   git add .
-  git commit -m $MSG
+  git commit -m "$MSG"
   git push
 fi
