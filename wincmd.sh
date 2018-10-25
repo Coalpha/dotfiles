@@ -1,0 +1,1 @@
+$System32/cmd.exe /C $@

@@ -4,9 +4,10 @@ red=`tput setaf 1`
 green=`tput setaf 2`
 magenta=`tput setaf 5`
 
-echo "The absolute path is: \"$1\""
-cd $1
-if [ $2 = "help" ]; then
+echo "The absolute path is: $STARBOUND_PATH"
+cd $STARBOUND_PATH
+# it's running in a subshell so it's fine probably
+if [ $1 = "help" ]; then
   echo "Starbound pack|unpack asset|json|player path1.something [output.json]"
   exit 0
 fi
@@ -14,31 +15,31 @@ if test "$#" -lt 3; then
   echo "${red}Illegal number of parameters$reset"
   exit 1
 fi
-if [ $2 = "pack" ]; then
+if [ $1 = "pack" ]; then
   pack=true
-elif [ $2 = "unpack" ]; then
+elif [ $1 = "unpack" ]; then
   pack=false
 else
-  echo "$red\"$2\" is not \"pack\" or \"unpack!\""
+  echo "$red\"$1\" is not \"pack\" or \"unpack!\""
   exit 1
 fi
-if [[ $3 = "asset" || $3 = "json" || $3 = "player" ]]; then
-  type=$3
+if [[ $2 = "asset" || $2 = "json" || $2 = "player" ]]; then
+  type=$2
 else
-  echo "$red\"$3\" is not \"asset\", \"json\", or \"player!\""
+  echo "$red\"$2\" is not \"asset\", \"json\", or \"player!\""
   exit 1
 fi
-if [ -z "$4" ]; then
+if [ -z "$3" ]; then
   echo "${red}Uh, there's no input"
   exit 1
 else
-  in_file="$4"
+  in_file="$3"
 fi
-if [ -z "$5" ]; then
+if [ -z "$4" ]; then
   out_file="$in_file.new"
   echo "${blue}No output file specified. Outputting to $out_file$reset"
 else
-  out_file="$5"
+  out_file="$4"
 fi
 if [ $type = "player" ]; then
   in_file="storage/player/$in_file"

@@ -5,10 +5,10 @@ if test "$#" -ne 2; then
   echo "${red}Illegal number of parameters"
   exit 0;
 fi
-if [[ $2 = "set" || $2 = "enable" ]]; then
-  pwd > $1
+if [[ $1 = "set" || $1 = "enable" ]]; then
+  pwd > $DDIR_PATH
   echo "${green}Enabled default directory at \"$(pwd)\"!"
-elif [ $2 = "disable" ]; then
-  rm $1
+elif [ $1 = "disable" ]; then
+  rm $DDIR_PATH
   echo "${magenta}Disabled!"
 fi

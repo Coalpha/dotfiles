@@ -1,5 +1,5 @@
 # this file allows execution of .class files
-# why is it called "walk.sh"?
+# eh? why is it called "walk.sh"?
 # well, with the speed that java "runs" at, can you really call it running?
 green=`tput setaf 2`
 reset=`tput sgr0`

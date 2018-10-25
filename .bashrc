@@ -34,41 +34,41 @@ alias ll="ls -alF"
 alias lsa="ls -A"
 alias l="ls -CF"
 
-# windows interfacing
-WIN_ROOT="/mnt/c"
-WIN_USERNAME="Alf"
-STARBOUND_PATH="/mnt/i/SteamLibrary/steamapps/common/Starbound"
-export WIN_HOME="$WIN_ROOT/Users/$WIN_USERNAME"
-export DOTFILES_DIR="$WIN_HOME/Desktop/dotfiles"
-alias home="cd $WIN_HOME"
-alias cdd="home && cd Desktop"
-alias cds="cd $STARBOUND_PATH"
-alias code="cdd && cd coalpha.github.io"
-alias clip="clip.exe"
-alias cmd="$WIN_ROOT/Windows/System32/cmd.exe"
-alias ps="$WIN_ROOT/Windows/System32/WindowsPowerShell/v1.0/powershell.exe"
-
-# sync
-alias sync="sudo $DOTFILES_DIR/sync.sh $DOTFILES_DIR $WIN_HOME"
-
-# default dir
-DDIR_PATH=~/DDIR.txt
-if [ -e $DDIR_PATH ]; then
-    cd "$(<$DDIR_PATH)"
-fi
-
 # node
 alias no="node --experimental-modules"
 alias ns="npm start"
 alias ni="npm i"
 alias nd="npm i -D"
+export C="/mnt/c"
+export DOTFILES="$C/dotfiles"
 
 # sh files in dotfiles
-alias walk="$DOTFILES_DIR/walk.sh"
-alias Starbound="$DOTFILES_DIR/Starbound.sh $STARBOUND_PATH"
-alias ddir="$DOTFILES_DIR/ddir.sh $DDIR_PATH"
+# maybe think of adding the dotfiles directory to the PATH
+. "$DOTFILES/paths.sh"
+alias sync="sudo $DOTFILES/sync.sh $DOTFILES $WIN_HOME" # have to provide these as arguments since sudo
+alias walk="$DOTFILES/walk.sh"
+alias Starbound="$DOTFILES/Starbound.sh"
+alias ddir="$DOTFILES/ddir.sh"
+
+# default dir
+if [ -e $DDIR_PATH ]; then
+    cd "$(<$DDIR_PATH)"
+fi
 
 # auto sudo
 alias apt-get="sudo apt-get"
 alias apt="sudo apt"
 alias screen="sudo screen"
+
+# handy directories
+alias home="cd $WIN_HOME"
+alias cdd="cd $WIN_HOME/Desktop"
+alias cds="cd $STARBOUND_PATH"
+alias code="cdd && cd coalpha.github.io"
+
+export System32="$C/Windows/System32"
+alias lose="$System32/cmd.exe"
+# WIN terminal aka cmd.exe? Well you're certainly not winning
+alias wincmd="$DOTFILES/wincmd.sh"
+alias ps="$System32/WindowsPowerShell/v1.0/powershell.exe"
+alias clip="wincmd clip.exe"
