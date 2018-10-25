@@ -1,3 +1,4 @@
+#!/bin/sh
 reset=`tput sgr0`
 blue=`tput setaf 4`
 yellow=`tput setaf 11`
@@ -41,22 +42,24 @@ else
   a=$right
 fi
 do_output .profile
-if [ $etc_env -nt $copy_env ]; then
-  cat $etc_env > $copy_env
-  a=$left
-else
-  cat $copy_env > $etc_env
-  a=$right
+if [ $EUID = 0 ]; then
+  if [ $etc_env -nt $copy_env ]; then
+    cat $etc_env > $copy_env
+    a=$left
+  else
+    cat $copy_env > $etc_env
+    a=$right
+  fi
+  do_output enviornment
+  if [ $etc_apt_sources -nt $copy_apt_sources ]; then
+    cat $etc_apt_sources > $copy_apt_sources
+    a=$left
+  else
+    cat $copy_apt_sources > $etc_apt_sources
+    a=$right
+  fi
+  do_output apt sources 
 fi
-do_output enviornment
-if [ $etc_apt_sources -nt $copy_apt_sources ]; then
-  cat $etc_apt_sources > $copy_apt_sources
-  a=$left
-else
-  cat $copy_apt_sources > $etc_apt_sources
-  a=$right
-fi
-do_output apt sources
 if [ $2 ]; then
   if [ $winhome_hyper -nt $copy_hyper ]; then
     cat $winhome_hyper > $copy_hyper
@@ -77,10 +80,12 @@ if [ $2 ]; then
 else
   echo "${reset}Couldn't find the windows_userfolder?!"
 fi
-MSG=${4:-Auto commit of dotfiles. Courtesy of sync.sh}
-if [ $3 = "save" ]; then
-  cd $1
-  git add .
-  git commit -m "$MSG"
-  git push
+if [ $EUID -ne 0 ]; then
+  MSG=${4:-Auto commit of dotfiles. Courtesy of sync.sh}
+  if [[ $3 == "save" ]]; then
+    cd $1
+    git add .
+    git commit -m "$MSG"
+    git push
+  fi
 fi
