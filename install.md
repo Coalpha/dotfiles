@@ -6,7 +6,7 @@ haskell-platform
 openjdk-11-jdk-headless
 crystal
 dotnet
-
+radare2 or IDA Pro
 # non apt
 nvm
 

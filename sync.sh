@@ -56,7 +56,7 @@ if [ $2 ]; then
   fi
   echo
   echo "Looking for settings.json in $appdata_vscode_settings"
-  if [$appdata_vscode_settings -nt $copy_vscode_settings]; then
+  if [ $appdata_vscode_settings -nt $copy_vscode_settings ]; then
     cat $appdata_vscode_settings > $copy_vscode_settings
     echo "${green}Replaced $magenta$copy_vscode_settings$reset with $cyan$appdata_vscode_settings!"
   else

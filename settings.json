@@ -1,12 +1,31 @@
 {
-  "workbench.iconTheme": "eq-material-theme-icons-palenight",
-  "workbench.colorTheme": "One Dark Pro",
-  "editor.tabSize": 2,
-  "window.zoomLevel": 0.4,
   "terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe",
   "terminal.integrated.fontFamily": "Ubuntu Mono, Consolas",
   "terminal.integrated.fontSize": 15,
-  "sync.gist": "7fa21cc77c4141e0861eef84d826f022",
-  "sync.autoUpload": true,
-  "sync.autoDownload": true
+  // setup the terminal for wsl
+  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.panel.defaultLocation": "right",
+  "window.zoomLevel": 0.4,
+  // make the editor not look bad
+  "files.eol": "\n",
+  "editor.tabSize": 2,
+  "editor.formatOnPaste": true,
+  "javascript.preferences.quoteStyle": "single",
+  // make files guud
+  "editor.selectionHighlight": false,
+  "javascript.validate.enable": false,
+  "editor.occurrencesHighlight": false,
+  "atomKeymap.promptV3Features": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  // make editing not painful
+  "php.suggest.basic": false,
+  "php.validate.enable": false,
+  "jsDocCompletion.enabled": false,
+  "telemetry.enableTelemetry": false,
+  // No! I don't want that!
+  "debug.openDebug": "neverOpen",
+  "debug.internalConsoleOptions": "neverOpen",
+  "debug.showInStatusBar": "never"
+  // stop showing me the debug thing
 }
