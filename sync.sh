@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 reset=`tput sgr0`
 blue=`tput setaf 4`
 yellow=`tput setaf 11`

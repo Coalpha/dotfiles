@@ -45,10 +45,10 @@ export DOTFILES="$C/dotfiles"
 # sh files in dotfiles
 # maybe think of adding the dotfiles directory to the PATH
 . "$DOTFILES/paths.sh"
-alias sync="bash $DOTFILES/sync.sh $DOTFILES $WIN_HOME"
-alias ssync="sudo bash $DOTFILES/sync.sh $DOTFILES $WIN_HOME"
+alias sync="$DOTFILES/sync.sh $DOTFILES $WIN_HOME"
+alias ssync="sudo $DOTFILES/sync.sh $DOTFILES $WIN_HOME"
 alias walk="$DOTFILES/walk.sh"
-alias Starbound="bash $DOTFILES/Starbound.sh"
+alias Starbound="$DOTFILES/Starbound.sh"
 alias ddir="$DOTFILES/ddir.sh"
 
 # default dir
