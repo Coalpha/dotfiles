@@ -11,7 +11,7 @@
   // make the editor not look bad
   "files.eol": "\n",
   "editor.tabSize": 2,
-  "editor.formatOnPaste": true,
+  "files.insertFinalNewline": true,
   "javascript.preferences.quoteStyle": "single",
   // make files guud
   "editor.selectionHighlight": false,
@@ -31,5 +31,18 @@
   // stop showing me the debug thing
   "workbench.colorCustomizations": {
     "editorWarning.foreground": "#FFAA0044"
+  },
+  "beautify.config": {
+    "css": {
+      "allowed_file_extensions": ["css", "scss", "sass", "less"],
+      "end_with_newline": true,
+      "indent_char": " ",
+      "indent_size": 2,
+      "newline_between_rules": true,
+      "selector_separator": " ",
+      "selector_separator_newline": true,
+      "preserve_newlines": true,
+      "max_preserve_newlines": 2
+    },
   },
 }
