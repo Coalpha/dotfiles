@@ -69,7 +69,8 @@ alias code="cdd && cd coalpha.github.io"
 
 export System32="$C/Windows/System32"
 alias lose="$System32/cmd.exe"
-# WIN terminal aka cmd.exe? Well you're certainly not winning
+# WIN terminal aka cmd.exe? Well you're certainly not winning if you're using that
 alias wincmd="$DOTFILES/wincmd.sh"
+alias winvarpath="$DOTFILES/winvarpath.sh"
 alias ps="$System32/WindowsPowerShell/v1.0/powershell.exe"
 alias clip="wincmd clip.exe"

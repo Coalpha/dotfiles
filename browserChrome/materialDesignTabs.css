@@ -9,8 +9,3 @@
 .tab-line {
   -moz-box-ordinal-group: 2;
 }
-/*
-.tab-line[selected=true] {
-  background-color: white !important;
-}
-*/

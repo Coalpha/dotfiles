@@ -30,9 +30,29 @@
   "debug.showInStatusBar": "never",
   // stop showing me the debug thing
   "workbench.colorCustomizations": {
-    "editorWarning.foreground": "#FFAA0044"
+    "editorWarning.foreground": "#FFAA0044",
   },
   "beautify.config": {
+    "html": {
+      "allowed_file_extensions": ["htm", "html", "xhtml", "shtml", "xml", "svg", "dust"],
+      "brace_style": "collapse",
+      "end_with_newline": true,
+      "indent_char": " ",
+      "indent_handlebars": true,
+      "indent_inner_html": false,
+      "indent_scripts": "keep",
+      "indent_size": 2,
+      "max_preserve_newlines": 2,
+      "preserve_newlines": true,
+      "unformatted": [
+        "a", "span", "img", "code", "pre",
+        "sub", "sup", "em", "strong", "b",
+        "i", "u", "strike", "big", "small",
+        "pre", "h1", "h2", "h3", "h4", "h5",
+        "h6",
+      ],
+      "wrap_line_length": 0,
+    },
     "css": {
       "allowed_file_extensions": ["css", "scss", "sass", "less"],
       "end_with_newline": true,
@@ -42,7 +62,7 @@
       "selector_separator": " ",
       "selector_separator_newline": true,
       "preserve_newlines": true,
-      "max_preserve_newlines": 2
+      "max_preserve_newlines": 2,
     },
   },
   "explorer.confirmDragAndDrop": false,
