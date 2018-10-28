@@ -9,7 +9,6 @@ etc_env="/etc/environment"
 etc_apt_sources="/etc/apt/sources.list"
 winhome_hyper="$2/.hyper.js"
 appdata_vscode_settings="$2/AppData/Roaming/Code/User/settings.json"
-browser_chrome"$C/chrome/"
 
 copy_bashrc="$1/.bashrc"
 copy_profile="$1/.profile"
@@ -17,7 +16,6 @@ copy_env="$1/environment"
 copy_apt_sources="$1/sources.list"
 copy_hyper="$1/.hyper.js"
 copy_vscode_settings="$1/settings.json"
-copy_browser_chrome="$1/chrome/"
 
 left="$yellow<==$reset"
 right="$blue==>$reset"
@@ -91,4 +89,3 @@ if [ $EUID -ne 0 ]; then
     git push
   fi
 fi
-rsync -r $browser_chrome $copy_browser_chrome

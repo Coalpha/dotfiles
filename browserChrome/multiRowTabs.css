@@ -28,11 +28,11 @@
 }
 
 #titlebar {
-  margin-bottom: calc(var(--tab-min-height)*-1) !important;
+  margin-bottom: calc(var(--tab-min-height) * -1) !important;
 }
 
 #main-window[sizemode="maximized"] #titlebar {
-  margin-bottom: calc(6px + var(--tab-min-height)*-1) !important;
+  margin-bottom: calc(6px + var(--tab-min-height) * -1) !important;
 }
 
 #main-window[sizemode="maximized"] #TabsToolbar {

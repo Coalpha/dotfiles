@@ -45,4 +45,5 @@
       "max_preserve_newlines": 2
     },
   },
+  "explorer.confirmDragAndDrop": false,
 }

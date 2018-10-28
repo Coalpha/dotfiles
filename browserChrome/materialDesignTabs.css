@@ -1,0 +1,16 @@
+.tabbrowser-tab[visuallyselected="true"] {
+  color: inherit !important;
+}
+
+.tab-background[selected=true] {
+  background-color: transparent !important;
+}
+
+.tab-line {
+  -moz-box-ordinal-group: 2;
+}
+/*
+.tab-line[selected=true] {
+  background-color: white !important;
+}
+*/
