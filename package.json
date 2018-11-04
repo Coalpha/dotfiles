@@ -1,8 +1,8 @@
 {
   "name": "dotfiles",
-  "version": "1.0.1",
+  "version": "0.0.2",
   "description": ".files",
-  "main": ".hyper.js",
+  "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,14 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/Coalpha/dotfiles.git"
   },
-  "author": "",
+  "author": "Cole Gannon",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Coalpha/dotfiles/issues"
   },
   "homepage": "https://github.com/Coalpha/dotfiles#readme",
   "devDependencies": {
-    "eslint": "^5.7.0",
+    "eslint": "^5.8.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0"
   }
