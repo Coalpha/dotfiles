@@ -1,0 +1,3 @@
+WIN_USERNAME=Alf
+export WIN_HOME=$C/Users/$WIN_USERNAME
+export CODEDIR=$WIN_HOME/Desktop

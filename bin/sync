@@ -1,0 +1,84 @@
+#!/bin/bash
+home_bashrc=~/.bashrc)
+home_profile=~/.profile)
+etc_env=/etc/environment
+etc_apt_sources=/etc/apt/sources.list
+winhome_hyper=$WIN_HOME/.hyper.js
+appdata_vscode_settings=$WIN_HOME/AppData/Roaming/Code/User/settings.json
+
+df_bashrc=$DOTFILES/.bashrc
+df_profile=$DOTFILES/.profile
+df_env=$DOTFILES/environment
+df_apt_sources=$DOTFILES/sources.list
+df_hyper=$DOTFILES/.hyper.js
+df_vscode_settings=$DOTFILES/settings.json
+
+left="$yellow<==$reset"
+right="$blue==>$reset"
+do_output () {
+  printf "%14s %s\n" $DOTFILES "Dotfiles $1 Dest"
+  echo
+}
+if [ $home_bashrc -nt $df_bashrc ]; then
+  cat $home_bashrc > $df_bashrc
+  a=$left
+else
+  cat $df_bashrc > $home_bashrc
+  a=$right
+fi
+do_output .bashrc
+if [ $home_profile -nt $df_profile ]; then
+  cat $home_profile > $df_profile
+  a=$left
+else
+  cat $df_profile > $home_profile
+  a=$right
+fi
+do_output .profile
+if [ $EUID = 0 ]; then
+  if [ $etc_env -nt $df_env ]; then
+    cat $etc_env > $df_env
+    a=$left
+  else
+    cat $df_env > $etc_env
+    a=$right
+  fi
+  do_output enviornment
+  if [ $etc_apt_sources -nt $df_apt_sources ]; then
+    cat $etc_apt_sources > $df_apt_sources
+    a=$left
+  else
+    cat $df_apt_sources > $etc_apt_sources
+    a=$right
+  fi
+  do_output apt sources 
+fi
+if [ $2 ]; then
+  if [ $winhome_hyper -nt $df_hyper ]; then
+    cat $winhome_hyper > $df_hyper
+    a=$left
+  else
+    cat $df_hyper > $winhome_hyper
+    a=$right
+  fi
+  do_output .hyper.js
+  if [ $appdata_vscode_settings -nt $df_vscode_settings ]; then
+    cat $appdata_vscode_settings > $df_vscode_settings
+    a=$left
+  else
+    cat $df_vscode_settings > $appdata_vscode_settings
+    a=$right
+  fi
+  do_output settings.json
+else
+  echo "${reset}Couldn't find the windows_userfolder?!"
+fi
+if [ $EUID -ne 0 ]; then
+  MSG=${4:-Auto commit of dotfiles. Courtesy of sync.sh}
+  if [ $1 = "save" ]; then
+    cd $DOTFILES
+    git add .
+    git commit -m "$MSG"
+    git push
+  fi
+fi

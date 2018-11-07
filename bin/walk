@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # this file allows execution of .class files
 # eh? why is it called "walk.sh"?
 # well, with the speed that java "runs" at, can you really call it running?

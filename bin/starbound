@@ -1,10 +1,6 @@
 #!/bin/sh
-reset=`tput sgr0`
-red=`tput setaf 1`
-green=`tput setaf 2`
-magenta=`tput setaf 5`
-
-echo "The absolute path is: $STARBOUND_PATH"
+STARBOUND_PATH="/mnt/i/SteamLibrary/steamapps/common/Starbound"
+echo "The absolute path is: $purple$STARBOUND_PATH$reset"
 cd $STARBOUND_PATH
 # it's running in a subshell so it's fine probably
 if [ $1 = "help" ]; then
@@ -74,4 +70,6 @@ fi
 ls
 command="./win32/$exe.exe $in_file $out_file"
 echo "The command to evaluate is $command"
-eval $command
+if [ confirm "Do you want to run the command?" = true ]; then
+  eval $command
+fi
