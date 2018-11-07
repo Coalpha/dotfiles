@@ -25,7 +25,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Nice Prompt
-export PS1="\[\e[92m\]\u\[\e[35m\] in \[\e[36m\]\W \[\e[33m\]↠  \[\e[0m\]"
+export PS1="\[$orange\]\u\[$black\] in \[$cyan\]\W \[$dred\]↠  \[$reset\]"
 # It looks like this:
 # User in Directory ↠
 
@@ -43,22 +43,13 @@ alias ns="npm start"
 alias ni="npm i"
 alias nd="npm i -D"
 
-# windows
-alias cmd.exe="$System32/cmd.exe"
-
-export USER=cmd.exe /c "echo %USERNAME%"
-export DOTFILES="$USER/dotfiles"
-
 # WIN terminal aka cmd.exe? Well you're certainly not winning if you're using that
-alias wincmd="$DOTFILES/wincmd.sh"
-alias winvarpath="$DOTFILES/winvarpath.sh"
+alias wincmd="cmd.exe /C"
 alias ps="$System32/WindowsPowerShell/v1.0/powershell.exe"
 alias clip="wincmd clip.exe"
 
 # default dir
-if [ -e $DDIR_PATH ]; then
-    cd "$(<$DDIR_PATH)"
-fi
+ddir login
 
 # auto sudo
 alias apt-get="sudo apt-get"

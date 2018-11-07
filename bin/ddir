@@ -1,7 +1,7 @@
 #!/bin/bash
 DDIR_PATH=~/DDIR.txt
-if test "$#" -ne 2; then
-  echo "${RED}Illegal number of parameters"
+if test "$#" -ne 1; then
+  echo "${red}Illegal number of parameters"
   exit 0;
 fi
 if [ $1 = "login" ]; then
@@ -10,8 +10,8 @@ if [ $1 = "login" ]; then
   fi
 elif [[ $1 = "set" || $1 = "enable" ]]; then
   pwd > $DDIR_PATH
-  echo "${GREEN}Enabled default directory at \"$(pwd)\"!"
+  echo "${green}Enabled default directory at \"$(pwd)\"!"
 elif [ $1 = "disable" ]; then
   rm $DDIR_PATH
-  echo "${MAGENTA}Disabled!"
+  echo "${yellow}Disabled!"
 fi

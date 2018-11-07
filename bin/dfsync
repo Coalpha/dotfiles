@@ -1,0 +1,102 @@
+#!/bin/bash
+
+# Active files
+actv_env=/etc/environment
+actv_sources=/etc/apt/sources.list
+actv_hyper=$ms_home/.hyper.js
+actv_vscode_settings=$ms_home/AppData/Roaming/Code/User/settings.json
+
+# The copies in dotfiles
+df_env=$dotfiles/environment
+df_apt_sources=$dotfiles/sources.list
+df_hyper=$dotfiles/.hyper.js
+df_vscode_settings=$dotfiles/settings.json
+
+# These are a one time thing
+home_bashrc=~/.bashrc
+home_profile=~/.profile
+df_bashrc=$dotfiles/static/.bashrc
+df_profile=$dotfiles/static/.profile
+
+left="$yellow<==$reset"
+oneway="$dred==>$reset"
+right="$blue==>$reset"
+print_usage () {
+  echo sync [-i] [-p]
+  echo -i: install
+  echo -p: push to github
+}
+do_output () {
+  printf "%14s %s\n" $dotfiles "dotfiles $a dest"
+  echo
+}
+push=false
+pushmsg="Auto push from dotfiles/bin/sync"
+install=false
+if [ $1 = "help" ]; then
+  print_usage
+  exit 1
+fi
+while getopts 'p:i' flag; do
+  case "${flag}" in
+    p) push=true
+       pushmsg=$OPTARG ;;
+    i) install=true ;;
+    *) print_usage
+       exit 1 ;;
+  esac
+done
+if [ $actv_hyper -nt $df_hyper ]; then
+  cat $actv_hyper > $df_hyper
+  a=$left
+else
+  cat $df_hyper > $actv_hyper
+  a=$right
+fi
+do_output .hyper.js
+
+if [ $actv_vscode_settings -nt $df_vscode_settings ]; then
+  cat $actv_vscode_settings > $df_vscode_settings
+  a=$left
+else
+  cat $df_vscode_settings > $actv_vscode_settings
+  a=$right
+fi
+do_output settings.json
+
+if [ $EUID = 0 ]; then
+  # we can replace env with sudo power
+  if [ $etc_env -nt $df_env ]; then
+    cat $etc_env > $df_env
+    a=$left
+  else
+    cat $df_env > $etc_env
+    a=$right
+  fi
+  do_output enviornment
+  if [ $etc_apt_sources -nt $df_apt_sources ]; then
+    cat $etc_apt_sources > $df_apt_sources
+    a=$left
+  else
+    cat $df_apt_sources > $etc_apt_sources
+    a=$right
+  fi
+  do_output apt sources 
+  if [ push = true ]; then
+    echo "${red}Cannot push when sync is run as root$reset"
+  fi
+elif [ push = true ]; then
+  cd $dotfiles
+  echo -n $black
+  git add .
+  git commit -m $pushmsg
+  git push
+  echo -n $reset
+fi
+if [ install = true ]; then
+  a=$oneway
+  cat $df_bashrc > $home_bashrc
+  do_output .bashrc
+  cat $df_profile > $home_profile
+  do_output .profile
+fi
