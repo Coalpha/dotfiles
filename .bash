@@ -52,7 +52,7 @@ alias ohno="cmd.exe /C"
 alias clip="clip.exe"
 
 # default dir
-ddir login
+. ddir login
 
 # auto sudo
 alias apt-get="sudo apt-get"
