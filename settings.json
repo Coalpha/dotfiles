@@ -3,11 +3,11 @@
   "terminal.integrated.fontFamily": "Ubuntu Mono, Consolas",
   "terminal.integrated.fontSize": 15,
   // setup the terminal for wsl
-  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "workbench.iconTheme": "eq-material-theme-icons-ocean",
   "workbench.colorTheme": "Material Theme Palenight",
   "workbench.panel.defaultLocation": "right",
   "editor.fontSize": 15,
-  "window.zoomLevel": 0.5,
+  "window.zoomLevel": 0.3,
   // make the editor not look bad
   "files.eol": "\n",
   "editor.tabSize": 2,
@@ -68,4 +68,6 @@
   "explorer.confirmDragAndDrop": false,
   "workbench.startupEditor": "newUntitledFile",
   "java.errors.incompleteClasspath.severity": "ignore",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 100,
 }

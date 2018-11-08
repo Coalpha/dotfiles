@@ -46,7 +46,7 @@ alias nd="npm i -D"
 # WIN terminal aka cmd.exe? Well you're certainly not winning if you're using that
 alias wincmd="cmd.exe /C"
 alias ps="$System32/WindowsPowerShell/v1.0/powershell.exe"
-alias clip="wincmd clip.exe"
+alias clip="clip.exe"
 
 # default dir
 ddir login
@@ -57,9 +57,9 @@ alias apt="sudo apt"
 alias screen="sudo screen"
 
 # handy directories
-alias home="cd $WIN_HOME"
-alias cdd="cd $WIN_HOME/Desktop"
-alias cds="cd $STARBOUND_PATH"
+alias home="cd $ms_home"
+alias cdd="cd $ms_home/Desktop"
+# alias cds="cd $STARBOUND_PATH"
 alias code="cdd && cd coalpha.github.io"
 
 alias lose="$System32/cmd.exe"

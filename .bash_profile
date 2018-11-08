@@ -18,6 +18,7 @@ export lgreen=$(tput setaf 10)
 export orange=$(tput setaf 11)
 export lblue=$(tput setaf 12)
 export reset=$(tput sgr0)
+export TEST=Henol
 
 # add a few more bins
 if [ -d "$HOME/bin" ]; then
