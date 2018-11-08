@@ -5,9 +5,11 @@
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-# append to the history file, don't overwrite it
+# welcome to the shop(t), I gotta make monet somehow
+shopt -s autocd
+shopt -s cdable_vars
+shopt -s cdspell
 shopt -s histappend
-
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
@@ -44,8 +46,9 @@ alias ni="npm i"
 alias nd="npm i -D"
 
 # WIN terminal aka cmd.exe? Well you're certainly not winning if you're using that
-alias wincmd="cmd.exe /C"
-alias ps="$System32/WindowsPowerShell/v1.0/powershell.exe"
+alias lsw="cmd.exe"
+# it's the reverse of wsl
+alias ohno="cmd.exe /C"
 alias clip="clip.exe"
 
 # default dir
@@ -62,4 +65,3 @@ alias cdd="cd $ms_home/Desktop"
 # alias cds="cd $STARBOUND_PATH"
 alias code="cdd && cd coalpha.github.io"
 
-alias lose="$System32/cmd.exe"
