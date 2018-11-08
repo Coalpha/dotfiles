@@ -73,7 +73,11 @@ uate=""
 
 if [ $install = true ]; then
   il=$dotfiles/static/.installed
-  [ -d $il ] && color=$black || color=$yellow
+  if [ -e $il ]; then
+    color=$black
+  else
+    color=$yellow
+  fi
   a=$oneway
   uate+="cat $df_bashrc > $home_bashrc;"
   uate+="cat $df_profile > $home_profile;"
