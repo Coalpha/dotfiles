@@ -1,17 +1,16 @@
 #!/bin/bash
-DDIR_PATH=~/DDIR.txt
 if test "$#" -ne 1; then
   echo "${red}Illegal number of parameters"
   exit 0;
 fi
 if [ $1 = "login" ]; then
-  if [ -e $DDIR_PATH ]; then
-    cd "$(<$DDIR_PATH)"
+  if [ -e ~/ddir.txt ]; then
+    cd "$(<~/ddir.txt)"
   fi
 elif [[ $1 = "set" || $1 = "enable" ]]; then
-  pwd > $DDIR_PATH
+  pwd > ~/ddir.txt
   echo "${green}Enabled default directory at \"$(pwd)\"!"
 elif [ $1 = "disable" ]; then
-  rm $DDIR_PATH
+  rm ~/ddir.txt
   echo "${yellow}Disabled!"
 fi

@@ -70,6 +70,6 @@ fi
 ls
 command="./win32/$exe.exe $in_file $out_file"
 echo "The command to evaluate is $command"
-if [ confirm "Do you want to run the command?" = true ]; then
-  eval $command
+if [ "$(confirm "Do you want to run the command?")" = true ]; then
+  eval "$command"
 fi

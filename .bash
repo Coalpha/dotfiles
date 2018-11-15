@@ -27,7 +27,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Nice Prompt
-export PS1="\[$orange\]\u\[$black\] in \[$cyan\]\W \[$dred\]↠  \[$reset\]"
+export PS1="\[$red\]\u\[$black\] in \[$lblue\]\W \[$cyan\]↠  \[$reset\]"
 # It looks like this:
 # User in Directory ↠
 
@@ -45,14 +45,16 @@ alias ns="npm start"
 alias ni="npm i"
 alias nd="npm i -D"
 
-# WIN terminal aka cmd.exe? Well you're certainly not winning if you're using that
-alias lsw="cmd.exe"
-# it's the reverse of wsl
+# windows
 alias ohno="cmd.exe /C"
 alias clip="clip.exe"
 
+# d
+alias dmd="dmd.exe"
+alias rdmd="rdmd.exe"
+
 # default dir
-ddir login
+. ddir login
 
 # auto sudo
 alias apt-get="sudo apt-get"

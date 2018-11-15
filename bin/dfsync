@@ -22,11 +22,14 @@ df_profile=$dotfiles/static/.profile
 
 right="$blue==>$reset"
 left="$yellow<==$reset"
-oneway="$dred==>$reset"
+oneway="$red==>$reset"
 print_usage () {
-  echo sync [-i] [-p]
-  echo -i: install
-  echo -p: push to github
+  echo dfsync [-p [msg]] [-i] [-v] [-y] [-s] 
+  echo "-p: push to github"
+  echo "-i: install"
+  echo "-v: verbose"
+  echo "-y: yes"
+  echo "-s: run with sudo"
 }
 do_output () {
   printf "$2%13s %s\n" $1 "dotfiles $a $2dest$reset"
@@ -100,7 +103,7 @@ if [ $push = true ]; then
 fi
 if [ $verbose = true ]; then
   echo "${magenta}The commands to be executed are:$reset"
-  echo -e $(echo $uate | sed -r 's/;/\\n/g')
+  echo -e "$(echo "$uate" | sed -r 's/;/\\n/g')"
 fi
 if [ $hyes = false ]; then
   if [ $(confirm "${orange}Execute?$reset") = false ]; then

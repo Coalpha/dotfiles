@@ -8,6 +8,8 @@ crystal
 dotnet
 radare2 or IDA Pro
 haxe
+julia
+d
 
 # non apt
 nvm

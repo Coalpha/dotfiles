@@ -13,7 +13,7 @@ export magenta=$(tput setaf 5)
 export cyan=$(tput setaf 6)
 export white=$(tput setaf 7)
 export black=$(tput setaf 8)
-export dred=$(tput setaf 9)
+# export dred=$(tput setaf 9)
 export lgreen=$(tput setaf 10)
 export orange=$(tput setaf 11)
 export lblue=$(tput setaf 12)
@@ -27,7 +27,7 @@ fi
 if [ -d "$HOME/.local/bin" ]; then
   PATH="$HOME/.local/bin:$PATH"
 fi
-PATH="$PATH:$dotfiles/bin"
+PATH="$PATH:$dotfiles/bin:$dotfiles/julia/bin"
 
 # run the bashrc since bash launch will only run .bash_profile
 if [ -f $dotfiles/.bash ]; then
