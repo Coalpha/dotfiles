@@ -18,7 +18,6 @@ export lgreen=$(tput setaf 10)
 export orange=$(tput setaf 11)
 export lblue=$(tput setaf 12)
 export reset=$(tput sgr0)
-export TEST=Henol
 
 # add a few more bins
 if [ -d "$HOME/bin" ]; then
@@ -27,8 +26,7 @@ fi
 if [ -d "$HOME/.local/bin" ]; then
   PATH="$HOME/.local/bin:$PATH"
 fi
-PATH="$PATH:$dotfiles/bin:$dotfiles/julia/bin"
-
+PATH="$PATH:$dotfiles/bin:$dotfiles/julia/bin:$dotfiles/graalvm/bin"
 # run the bashrc since bash launch will only run .bash_profile
 if [ -f $dotfiles/.bash ]; then
   . $dotfiles/.bash

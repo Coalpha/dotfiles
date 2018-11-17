@@ -1,7 +1,7 @@
 #!/bin/sh
 STARBOUND_PATH="/mnt/i/SteamLibrary/steamapps/common/Starbound"
 echo "The absolute path is: $purple$STARBOUND_PATH$reset"
-cd $STARBOUND_PATH
+cd $STARBOUND_PATH || echo "cd failed" && exit 1
 # it's running in a subshell so it's fine probably
 if [ $1 = "help" ]; then
   echo "Starbound pack|unpack asset|json|player path1.something [output.json]"

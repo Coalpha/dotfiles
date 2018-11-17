@@ -5,7 +5,7 @@ if test "$#" -ne 1; then
 fi
 if [ $1 = "login" ]; then
   if [ -e ~/ddir.txt ]; then
-    cd "$(<~/ddir.txt)"
+    cd "$(<~/ddir.txt)" || exit 1
   fi
 elif [[ $1 = "set" || $1 = "enable" ]]; then
   pwd > ~/ddir.txt

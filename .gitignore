@@ -8,3 +8,5 @@ yarn-error.log*
 node_modules/
 # Julia stuff
 julia/
+# Graal
+graalvm/

@@ -1,40 +1,53 @@
 {
-  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe",
-  "terminal.integrated.fontFamily": "Ubuntu Mono, Consolas",
-  "terminal.integrated.fontSize": 15,
   // setup the terminal for wsl
-  "workbench.iconTheme": "eq-material-theme-icons-palenight",
-  "workbench.colorTheme": "Material Theme Palenight",
-  "workbench.panel.defaultLocation": "right",
+  "terminal.integrated.fontSize": 15,
+  "terminal.integrated.fontFamily": "Ubuntu Mono, Consolas",
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\wsl.exe",
+  // setup other things for wsl
+  "shellcheck.useWSL": true,
+  "crystal-lang.bashOnWindows": true,
+  "crystal-lang.compiler": "crystal.bat",
+  // git
+  "git.defaultCloneDirectory": "C:\\Users\\Alf\\Desktop",
+  // make the editor not look bad
   "editor.fontSize": 15,
   "window.zoomLevel": 0.3,
-  // make the editor not look bad
+  "workbench.panel.defaultLocation": "right",
+  "workbench.colorTheme": "Material Theme Palenight",
+  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  // make files guud
   "files.eol": "\n",
   "editor.tabSize": 2,
   "files.insertFinalNewline": true,
   "javascript.preferences.quoteStyle": "single",
-  // make files guud
+  // make editing not painful
   "editor.selectionHighlight": false,
   "javascript.validate.enable": false,
-  "editor.occurrencesHighlight": false,
   "atomKeymap.promptV3Features": true,
+  "editor.occurrencesHighlight": false,
   "editor.multiCursorModifier": "ctrlCmd",
-  // make editing not painful
+  "workbench.startupEditor": "newUntitledFile",
+  // No! I don't want that!
   "php.suggest.basic": false,
   "php.validate.enable": false,
   "jsDocCompletion.enabled": false,
   "telemetry.enableTelemetry": false,
-  // No! I don't want that!
-  "debug.openDebug": "neverOpen",
-  "debug.internalConsoleOptions": "neverOpen",
-  "debug.showInStatusBar": "never",
+  "extensions.ignoreRecommendations": true,
+  "java.errors.incompleteClasspath.severity": "ignore",
   // stop showing me the debug thing
+  "debug.openDebug": "neverOpen",
+  // "debug.showInStatusBar": "never",
+  "explorer.confirmDragAndDrop": false,
+  "debug.internalConsoleOptions": "neverOpen",
   "workbench.colorCustomizations": {
-    "editorWarning.foreground": "#FFAA0044",
+    "editorWarning.foreground": "#ffbb004e",
   },
   "beautify.config": {
     "html": {
-      "allowed_file_extensions": ["htm", "html", "xhtml", "shtml", "xml", "svg", "dust"],
+      "allowed_file_extensions": [
+        "htm", "html", "xhtml",
+        "shtml", "xml", "svg", "dust"
+      ],
       "brace_style": "collapse",
       "end_with_newline": true,
       "indent_char": " ",
@@ -65,10 +78,7 @@
       "max_preserve_newlines": 2,
     },
   },
-  "explorer.confirmDragAndDrop": false,
-  "workbench.startupEditor": "newUntitledFile",
-  "java.errors.incompleteClasspath.severity": "ignore",
-  "editor.wordWrap": "wordWrapColumn",
-  "editor.wordWrapColumn": 100,
-  "shellcheck.useWSL": true
+  "d.dubPath": "C:\\Users\\Alf\\AppData\\Roaming\\code-d\\bin\\dub.exe",
+  "d.servedPath": "C:\\Users\\Alf\\AppData\\Roaming\\code-d\\bin\\serve-d.exe",
+  "shellcheck.disableVersionCheck": true,
 }

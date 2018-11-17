@@ -4,10 +4,6 @@
 # eh? why is it called "walk.sh"?
 # well, with the speed that java "runs" at, can you really call it running?
 set -e
-green=`tput setaf 2`
-reset=`tput sgr0`
-yellow=`tput setaf 11`
-cyan=`tput setaf 6`
 filename=$(basename -- "$1")
 filename="${filename%.*}"
 echo "${yellow}Compiling code!"
