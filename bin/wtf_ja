@@ -4,10 +4,7 @@
 # im literally crying and shaking
 # this cant be happenign
 set -e
-
-print_usage() {
-  echo "wtf_ja command"
-}
+before_cd=$(pwd)
 source_dir=false
 rawname=false
 in_file=false
@@ -42,7 +39,12 @@ clean() {
   echo
 }
 native() {
-  out_file=${1:-rawname}
+  if [ -z $1 ]; then
+    out_file="$(pwd)/$rawname"
+  else
+    out_file="${before_cd}/$1"
+  fi
+  echo $out_file
   echo $black
   native-image $rawname $out_file
   clear
@@ -54,7 +56,7 @@ run_code() {
     java $rawname
   else
     echo "${black}Running native code:$reset"
-    ./$out_file
+    $out_file
   fi
 }
 while [[ $# -gt 0 ]]; do
