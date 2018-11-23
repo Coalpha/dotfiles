@@ -7,18 +7,18 @@ actv_bash_profile=~/.bash_profile
 actv_apt_sources="/etc/apt/sources.list"
 actv_vscode_settings=$ms_home/AppData/Roaming/Code/User/settings.json
 
-# The copies in dotfiles
-df_env=$dotfiles/environment
-df_hyper=$dotfiles/.hyper.js
-df_apt_sources=$dotfiles/sources.list
-df_bash_profile=$dotfiles/.bash_profile
-df_vscode_settings=$dotfiles/settings.json
+# The copies in the dotfiles dir
+df_env=$df/environment
+df_hyper=$df/.hyper.js
+df_apt_sources=$df/sources.list
+df_bash_profile=$df/.bash_profile
+df_vscode_settings=$df/settings.json
 
 # These are a one time thing
 home_bashrc=~/.bashrc
 home_profile=~/.profile
-df_bashrc=$dotfiles/static/.bashrc
-df_profile=$dotfiles/static/.profile
+df_bashrc=$df/static/.bashrc
+df_profile=$df/static/.profile
 
 right="$blue==>$reset"
 left="$yellow<==$reset"
@@ -32,7 +32,7 @@ print_usage () {
   echo "-s: run with sudo"
 }
 do_output () {
-  printf "$2%13s %s\n" $1 "dotfiles $a $2dest$reset"
+  printf "$2%13s %s\n" $1 "df $a $2dest$reset"
   echo
 }
 choose_write () {
@@ -59,7 +59,7 @@ hyes=false
 pseudo=false
 install=false
 verbose=false
-msg="Auto push from dotfiles/bin/sync"
+msg="Auto push from df/bin/sync"
 while getopts 'p:ivys' flag; do
   case "${flag}" in
     p) push=true
@@ -75,7 +75,7 @@ done
 uate=""
 
 if [ $install = true ]; then
-  il=$dotfiles/static/.installed
+  il=$df/static/.installed
   if [ -e $il ]; then
     color=$black
   else
@@ -99,7 +99,7 @@ if [ $pseudo = true ]; then
   choose_write $df_apt_sources $actv_apt_sources sources.list true
 fi
 if [ $push = true ]; then
-  uate+="cd $dotfiles;git add .;git commit -m \"$msg\";git push"
+  uate+="cd $df;git add .;git commit -m \"$msg\";git push"
 fi
 if [ $verbose = true ]; then
   echo "${magenta}The commands to be executed are:$reset"

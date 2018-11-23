@@ -67,3 +67,5 @@ alias cdd="cd $ms_home/Desktop"
 # alias cds="cd $STARBOUND_PATH"
 alias code="cdd && cd coalpha.github.io"
 
+# wtf_ga
+alias wtf_ga="wtf_ja"

@@ -33,7 +33,6 @@
   "jsDocCompletion.enabled": false,
   "telemetry.enableTelemetry": false,
   "extensions.ignoreRecommendations": true,
-  "java.errors.incompleteClasspath.severity": "ignore",
   // stop showing me the debug thing
   "debug.openDebug": "neverOpen",
   // "debug.showInStatusBar": "never",
@@ -81,4 +80,12 @@
   "d.dubPath": "C:\\Users\\Alf\\AppData\\Roaming\\code-d\\bin\\dub.exe",
   "d.servedPath": "C:\\Users\\Alf\\AppData\\Roaming\\code-d\\bin\\serve-d.exe",
   "shellcheck.disableVersionCheck": true,
+  // make Fava editing faster
+  "java.autobuild.enabled": false,
+  "java.configuration.updateBuildConfiguration": "disabled",
+  "java.format.enabled": false,
+  "java.format.comments.enabled": false,
+  "java.import.maven.enabled": false,
+  "java.progressReports.enabled": false,
+  "java.errors.incompleteClasspath.severity": "ignore",
 }

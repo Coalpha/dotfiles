@@ -2,6 +2,7 @@
 # winterfacing
 export ms_home=$(wslpath $(cmd.exe /C "echo|set /p=%userprofile%"))
 export dotfiles=$ms_home/Desktop/dotfiles
+export df=$dotfiles
 
 # colors and formatting
 export black=$(tput setaf 0)
@@ -26,10 +27,11 @@ fi
 if [ -d "$HOME/.local/bin" ]; then
   PATH="$HOME/.local/bin:$PATH"
 fi
-PATH="$PATH:$dotfiles/bin:$dotfiles/julia/bin:$dotfiles/graalvm/bin"
+PATH="$PATH:$df/bin:$df/julia/bin:$df/graalvm/bin:$df/dotnet-runtime"
 # run the bashrc since bash launch will only run .bash_profile
-if [ -f $dotfiles/.bash ]; then
-  . $dotfiles/.bash
+if [ -f $df/.bash ]; then
+  . $df/.bash
 else
   echo "Couldn't find ~/.bashrc?"
 fi
+export GPG_TTY=$(tty)

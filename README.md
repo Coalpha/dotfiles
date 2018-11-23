@@ -1,5 +1,8 @@
 # .files
-Here are some of my dotfiles. Since I'm using WSL,
-I've got a lot of configuration files to make it less painful.
-This repository also seems to be used for shell files and I'm not really
-sure why. I guess it keeps them organized or something.
+
+Since I use WSL for code, there's a lot of config files to make
+the enviornment (pun intended) cool and good.
+
+There's also a bin directory within this repo that stores some
+cool applications that I use. Most of them are made by me. Others,
+like colors, are not.

@@ -1,4 +1,4 @@
-if [ $0 != "/bin/bash"] ; then 
+if [ $0 != "/bin/bash" ] ; then 
   echo "You should probably be using bash as your shell!"
 fi
 # set PATH so it includes user's private bin if it exists
