@@ -1,20 +1,16 @@
-# apt
-clang
-ffmpeg
-gcc
-haskell-platform
-openjdk-11-jdk-headless
-crystal
-dotnet
-radare2 or IDA Pro
-haxe
-julia
-d
-nim
-
-# non apt
-nvm
-
-# node
-eslint
-ytdl
+# This is a list of things that I should install if I bean my computer
+- clang
+- ffmpeg
+- gcc
+- haskell-platform
+- openjdk-11-jdk-headless
+- crystal
+- dotnet
+- radare2 or IDA Pro
+- haxe
+- julia
+- d
+- nim
+- nvm
+- eslint
+- ytdl
