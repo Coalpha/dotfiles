@@ -29,7 +29,7 @@ print_usage () {
   echo "-i: install"
   echo "-v: verbose"
   echo "-y: yes"
-  echo "-s: run with sudo"
+  echo "-s: run with sudo (which doesn't actually work)"
 }
 do_output () {
   printf "$2%13s %s\n" $1 "df $a $2dest$reset"

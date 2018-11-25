@@ -27,11 +27,13 @@ fi
 if [ -d "$HOME/.local/bin" ]; then
   PATH="$HOME/.local/bin:$PATH"
 fi
-PATH="$PATH:$df/bin:$df/julia/bin:$df/graalvm/bin:$df/dotnet-runtime"
+if [ -d "$HOME/graalvm/bin" ]; then
+  PATH="$PATH:$HOME/graalvm/bin"
+fi
+PATH="$PATH:$df/bin"
 # run the bashrc since bash launch will only run .bash_profile
 if [ -f $df/.bash ]; then
   . $df/.bash
 else
   echo "Couldn't find ~/.bashrc?"
 fi
-export GPG_TTY=$(tty)

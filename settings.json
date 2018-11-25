@@ -13,8 +13,6 @@
   "editor.fontSize": 15,
   "window.zoomLevel": 0.3,
   "workbench.panel.defaultLocation": "right",
-  "workbench.colorTheme": "Material Theme Palenight",
-  "workbench.iconTheme": "eq-material-theme-icons-palenight",
   // make files guud
   "files.eol": "\n",
   "editor.tabSize": 2,
@@ -40,6 +38,25 @@
   "debug.internalConsoleOptions": "neverOpen",
   "workbench.colorCustomizations": {
     "editorWarning.foreground": "#ffbb004e",
+    "activityBarBadge.background": "#00BCD4",
+    "list.activeSelectionForeground": "#00BCD4",
+    "list.inactiveSelectionForeground": "#00BCD4",
+    "list.highlightForeground": "#00BCD4",
+    "scrollbarSlider.activeBackground": "#00BCD450",
+    "editorSuggestWidget.highlightForeground": "#00BCD4",
+    "textLink.foreground": "#00BCD4",
+    "progressBar.background": "#00BCD4",
+    "pickerGroup.foreground": "#00BCD4",
+    "tab.activeBorder": "#00BCD4",
+    "notificationLink.foreground": "#00BCD4",
+    "editorWidget.resizeBorder": "#00BCD4",
+    "editorWidget.border": "#00BCD4",
+    "settings.modifiedItemIndicator": "#00BCD4",
+    "settings.headerForeground": "#00BCD4",
+    "panelTitle.activeBorder": "#00BCD4",
+    "breadcrumb.activeSelectionForeground": "#00BCD4",
+    "menu.selectionForeground": "#00BCD4",
+    "menubar.selectionForeground": "#00BCD4"
   },
   "beautify.config": {
     "html": {
@@ -88,4 +105,10 @@
   "java.import.maven.enabled": false,
   "java.progressReports.enabled": false,
   "java.errors.incompleteClasspath.severity": "ignore",
+  "workbench.colorTheme": "Material Theme Palenight",
+  "materialTheme.accent": "Cyan",
+  "materialTheme.showReloadNotification": false,
+  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "julia.enableTelemetry": false,
+  "julia.executablePath": "C:\\bin\\julia.bat",
 }

@@ -10,6 +10,7 @@ radare2 or IDA Pro
 haxe
 julia
 d
+nim
 
 # non apt
 nvm
