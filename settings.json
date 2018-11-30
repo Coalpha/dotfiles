@@ -110,5 +110,13 @@
   "materialTheme.showReloadNotification": false,
   "workbench.iconTheme": "eq-material-theme-icons-palenight",
   "julia.enableTelemetry": false,
-  "julia.executablePath": "C:\\bin\\julia.bat",
+  "julia.executablePath": "C:\\Juulia\\Julia-1.0.2\bin\\julia.exe",
+  "emojisense.languages": {
+    "markdown": true,
+    "plaintext": {
+      "markupCompletionsEnabled": false,
+      "emojiDecoratorsEnabled": false
+    },
+    "julia": true,
+  }
 }
