@@ -1,4 +1,5 @@
 # This is a list of things that I should install if I bean my computer
+
 - clang
 - ffmpeg
 - gcc
@@ -14,3 +15,5 @@
 - nvm
 - eslint
 - ytdl
+- linuxbrew
+- neofetch (duh)

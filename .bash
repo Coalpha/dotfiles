@@ -45,6 +45,10 @@ alias ns="npm start"
 alias ni="npm i"
 alias nd="npm i -D"
 
+# I seem to have trouble typing "yoruvue-dl"
+alias ytdl="youtube-dl"
+alias scdl="youtube-dl --embed-thumbnail"
+
 # windows
 alias ohno="cmd.exe /C"
 alias clip="clip.exe"
@@ -57,7 +61,6 @@ alias rdmd="rdmd.exe"
 . ddir login
 
 # auto sudo
-alias apt-get="sudo apt-get"
 alias apt="sudo apt"
 alias screen="sudo screen"
 

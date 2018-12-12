@@ -17,7 +17,7 @@
   "files.eol": "\n",
   "editor.tabSize": 2,
   "files.insertFinalNewline": true,
-  "javascript.preferences.quoteStyle": "single",
+  "javascript.preferences.quoteStyle": "double",
   // make editing not painful
   "editor.selectionHighlight": false,
   "javascript.validate.enable": false,
@@ -109,14 +109,27 @@
   "materialTheme.accent": "Cyan",
   "materialTheme.showReloadNotification": false,
   "workbench.iconTheme": "eq-material-theme-icons-palenight",
-  "julia.enableTelemetry": false,
-  "julia.executablePath": "C:\\Juulia\\Julia-1.0.2\bin\\julia.exe",
   "emojisense.languages": {
     "markdown": true,
     "plaintext": {
       "markupCompletionsEnabled": false,
       "emojiDecoratorsEnabled": false
     },
-    "julia": true,
-  }
+    "scss": true,
+  },
+  "editor.acceptSuggestionOnEnter": "off",
+  "javascript.autoClosingTags": false,
+  "typescript.surveys.enabled": false,
+  "editor.parameterHints.enabled": false,
+  "spellchecker.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext"
+  ],
+  "terminal.external.windowsExec": "C:\\Windows\\System32\\wsl.exe",
+  "terminal.integrated.experimentalBufferImpl": "TypedArray",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "stylusSupremacy.insertBraces": false,
+  "editor.emptySelectionClipboard": false,
+  "window.newWindowDimensions": "maximized",
 }

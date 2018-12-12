@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # winterfacing
-export ms_home=$(wslpath $(cmd.exe /C "echo|set /p=%userprofile%"))
+export C=/mnt/c
+export ms_home=$(wslpath "$(cmd.exe /C "echo|set /p=%userprofile%")")
 export dotfiles=$ms_home/Desktop/dotfiles
 export df=$dotfiles
 
@@ -14,7 +15,6 @@ export magenta=$(tput setaf 5)
 export cyan=$(tput setaf 6)
 export white=$(tput setaf 7)
 export black=$(tput setaf 8)
-# export dred=$(tput setaf 9)
 export lgreen=$(tput setaf 10)
 export orange=$(tput setaf 11)
 export lblue=$(tput setaf 12)
@@ -28,12 +28,12 @@ if [ -d "$HOME/.local/bin" ]; then
   PATH="$HOME/.local/bin:$PATH"
 fi
 if [ -d "$HOME/graalvm/bin" ]; then
-  PATH="$PATH:$HOME/graalvm/bin"
+  PATH+=":$HOME/graalvm/bin"
 fi
-PATH="$PATH:$df/bin"
+PATH+=":$df/bin:/home/linuxbrew/.linuxbrew/bin"
 # run the bashrc since bash launch will only run .bash_profile
-if [ -f $df/.bash ]; then
-  . $df/.bash
+if [ -f "$df"/.bash ]; then
+  . "$df"/.bash
 else
   echo "Couldn't find ~/.bashrc?"
 fi

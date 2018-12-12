@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+if [ $# -ge 1 ]; then
+  input="$1"
+else
+  read -r input
+fi
+if [[ $input == $C* ]]; then
+  echo "$input" | sed -e "s/\/mnt\/c/C:/" -e 's|/|\\|g'
+  exit 0
+fi
+echo "\"$input\"${red} is not within the C drive!$reset"
+exit 1
