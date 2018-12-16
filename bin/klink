@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# mklink pronounced m-klink
+run="cmd.exe /C \"mklink "
+winpath() {
+  read -r input
+  echo "$input" | sed -e 's|\/mnt\/c||' -e 's|/|\\|g'
+  exit 0
+}
+if [ "$#" -lt 2 ]; then
+  echo klink src dest
+fi
+if [ ! -e $1 ]; then
+  echo "${red}Link target does not exist!$reset"
+  exit 1
+fi
+if [ -d $1 ]; then
+  run+="/J"
+else
+  run+="/H"
+fi
+eval "$run $(realpath "$2" | winpath) $(realpath "$1" | winpath)\""

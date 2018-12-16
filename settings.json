@@ -12,7 +12,6 @@
   // make the editor not look bad
   "editor.fontSize": 15,
   "window.zoomLevel": 0.3,
-  "workbench.panel.defaultLocation": "right",
   // make files guud
   "files.eol": "\n",
   "editor.tabSize": 2,
@@ -94,17 +93,20 @@
       "max_preserve_newlines": 2,
     },
   },
+
+  // D lang
   "d.dubPath": "C:\\Users\\Alf\\AppData\\Roaming\\code-d\\bin\\dub.exe",
   "d.servedPath": "C:\\Users\\Alf\\AppData\\Roaming\\code-d\\bin\\serve-d.exe",
-  "shellcheck.disableVersionCheck": true,
-  // make Fava editing faster
+  
+  // make Java editing faster
   "java.autobuild.enabled": false,
-  "java.configuration.updateBuildConfiguration": "disabled",
-  "java.format.enabled": false,
-  "java.format.comments.enabled": false,
   "java.import.maven.enabled": false,
+  "java.format.onType.enabled": false,
   "java.progressReports.enabled": false,
   "java.errors.incompleteClasspath.severity": "ignore",
+  "java.configuration.updateBuildConfiguration": "disabled",
+
+
   "workbench.colorTheme": "Material Theme Palenight",
   "materialTheme.accent": "Cyan",
   "materialTheme.showReloadNotification": false,
@@ -121,15 +123,16 @@
   "javascript.autoClosingTags": false,
   "typescript.surveys.enabled": false,
   "editor.parameterHints.enabled": false,
-  "spellchecker.documentTypes": [
-    "markdown",
-    "latex",
-    "plaintext"
-  ],
   "terminal.external.windowsExec": "C:\\Windows\\System32\\wsl.exe",
   "terminal.integrated.experimentalBufferImpl": "TypedArray",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "stylusSupremacy.insertBraces": false,
   "editor.emptySelectionClipboard": false,
   "window.newWindowDimensions": "maximized",
+  "vsicons.dontShowNewVersionMessage": true,
+  "extensions.showRecommendationsOnlyOnDemand": true,
+  "editor.renderWhitespace": "boundary",
+  "git.path": "C:\\bin\\git.bat",
+  "shellcheck.disableVersionCheck": true,
+  "git.enableSmartCommit": true,
+
 }

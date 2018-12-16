@@ -1,0 +1,50 @@
+# This is the changelog for Aoide
+
+2018:
+  November:
+    - Installed WSL
+    - created C:\bin
+  December:
+    - Installed Dotz Softwares SVG Explorer extension
+    - Installed Chocolatey
+    - Changed names for hardware within the windows registry
+    - Changed four finger swipe direction in registry!
+    - Removed "3D Objects" from This PC
+    - Added shell location "UsersFiles" to This PC
+    - Added shell location "appwiz.cpl" into explorer naviation pane
+    - Added "qb" into explorer naviation pane
+    - Installed Firefox
+    - Disabled Firefox Pocket through about:config
+    - Installed Shadowfox for Firefox
+    - Uninstalled Shadowfox for FFDEV
+    - Uninstalled Firefox
+    - Downloaded Shadowfox 1.7.12.0
+    - Installed Shadowfox for FFDEV
+    - Updated $dotfiles/browserChrome/userFirefox.css for FFDEV
+    - FFDEV extensions.screenshots.disabled = true
+    - FFDEV extensions.screenshots-upload.disabled = true
+    - FFDEV https://github.com/Aris-t2/CustomCSSforFx
+    - Installed Eclipse
+    - Downloaded processing-3.4 and placed in %systemroot%
+    - Linked processing-3.4 within global start
+    - Set windows indexing to include only %appdata%\Microsoft\Windows\Start Menu and %programdata%\Microsoft\Windows\Start Menu
+    - Set windows indexing location to C:\Windexing
+    - Changed icon for directory C:\Windexing to magnifying glass
+    - Installed vscode insiders
+    - Renamed vscode insiders.lnk to stdio։։code with arcane magic (not semicolons)
+    - Installed Resource Hacker
+    - Changed icon for vscode insiders exe
+    - Removed "Send To" from Windows context menu
+    - Remvoed "Include in library" from windows context menu
+Rice:
+  Hives:
+    HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum:
+      ACPI:
+        GenuineIntel_-_Intel64_Family_6_Model_142_-_Intel(R)_Core(TM)_i7-8550U_CPU_@_1.80GHz:
+          $_(\w)\\FriendlyName: "Core $1: i7-8550U @ 1.80GHz"
+        ELAN0650:
+          1\FriendlyName: "Cursed ELAN Touchpad"
+      HID:
+        ELAN0650&Col01:
+          5&e8d1288&0&0000:
+            Device Parameters\FlipFlopHScroll: 1 
