@@ -36,6 +36,7 @@
     - Changed icon for vscode insiders exe
     - Removed "Send To" from Windows context menu
     - Remvoed "Include in library" from windows context menu
+    - Hardlinked C:\bin to $dotfiles/win_bin
 Rice:
   Hives:
     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum:
