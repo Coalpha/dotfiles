@@ -3,7 +3,6 @@
 - clang
 - ffmpeg
 - gcc
-- haskell-platform
 - openjdk-11-jdk-headless
 - crystal
 - dotnet
@@ -12,8 +11,6 @@
 - julia
 - d
 - nim
-- nvm
 - eslint
-- ytdl
-- linuxbrew
+- youtube-dl
 - neofetch (duh)

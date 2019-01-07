@@ -4,9 +4,10 @@ if [ $# -ge 1 ]; then
 else
   read -r input
 fi
-if [[ $input == $C* ]]; then
-  echo "$input" | sed -e "s/\/mnt\/c/C:/" -e 's|/|\\|g'
+real_input=$(realpath "$input")
+if [[ $real_input == $C* ]]; then
+  echo "$real_input" | sed -e 's|/mnt/c|C:/' -e 's|/|\\|g'
   exit 0
 fi
-echo "\"$input\"${red} is not within the C drive!$reset"
+echo "\"$real_input\"${red} is not within the C drive!$reset"
 exit 1

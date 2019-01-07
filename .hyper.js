@@ -75,7 +75,7 @@ module.exports = {
     backgroundColor,
     borderColor,
     colors,
-    shell: 'C:\\Windows\\System32\\bash.exe',
+    shell: 'C:\\Windows\\System32\\wsl.exe',
     // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
     // by default `['--login']` will be used
     shellArgs: [],
@@ -95,4 +95,5 @@ module.exports = {
   keymaps: {
     'tab:new': 'alt+n',
   },
+  webGLRenderer: true,
 };

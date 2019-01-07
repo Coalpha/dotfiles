@@ -11,7 +11,7 @@
   "git.defaultCloneDirectory": "C:\\Users\\Alf\\Desktop",
   // make the editor not look bad
   "editor.fontSize": 15,
-  "window.zoomLevel": 0.3,
+  "window.zoomLevel": 0,
   // make files guud
   "files.eol": "\n",
   "editor.tabSize": 2,
@@ -110,7 +110,7 @@
   "workbench.colorTheme": "Material Theme Palenight",
   "materialTheme.accent": "Cyan",
   "materialTheme.showReloadNotification": false,
-  "workbench.iconTheme": "eq-material-theme-icons-palenight",
+  "workbench.iconTheme": "eq-material-theme-icons-ocean",
   "emojisense.languages": {
     "markdown": true,
     "plaintext": {
@@ -134,5 +134,11 @@
   "git.path": "C:\\bin\\git.bat",
   "shellcheck.disableVersionCheck": true,
   "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "files.autoSave": "off",
+  "files.associations": {
+    "*.pde": "java"
+  },
 
 }

@@ -4,6 +4,7 @@
   November:
     - Installed WSL
     - created C:\bin
+    - Added C:\bin to %PATH%
   December:
     - Installed Dotz Softwares SVG Explorer extension
     - Installed Chocolatey
@@ -23,7 +24,7 @@
     - Updated $dotfiles/browserChrome/userFirefox.css for FFDEV
     - FFDEV extensions.screenshots.disabled = true
     - FFDEV extensions.screenshots-upload.disabled = true
-    - FFDEV https://github.com/Aris-t2/CustomCSSforFx
+    - FFDEV follwed some instructions from https://github.com/Aris-t2/CustomCSSforFx
     - Installed Eclipse
     - Downloaded processing-3.4 and placed in %systemroot%
     - Linked processing-3.4 within global start
@@ -36,7 +37,7 @@
     - Changed icon for vscode insiders exe
     - Removed "Send To" from Windows context menu
     - Remvoed "Include in library" from windows context menu
-    - Hardlinked C:\bin to $dotfiles/win_bin
+    - Uninstalled vscode insiders
 Rice:
   Hives:
     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum:

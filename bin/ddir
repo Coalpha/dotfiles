@@ -10,7 +10,7 @@ if [ $1 = "login" ]; then
 elif [[ $1 = "set" || $1 = "enable" ]]; then
   pwd > ~/ddir.txt
   echo "${green}Enabled default directory at \"$(pwd)\"!"
-elif [ $1 = "disable" ]; then
+elif [ "$1" = "disable" ]; then
   rm ~/ddir.txt
   echo "${yellow}Disabled!"
 fi

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# mklink pronounced m-klink
+# kursed link
 run="cmd.exe /C \"mklink "
 winpath() {
   read -r input
@@ -10,13 +10,13 @@ winpath() {
 if [ "$#" -lt 2 ]; then
   echo klink src dest
 fi
-if [ ! -e $1 ]; then
+if [ ! -e "$1" ]; then
   echo "${red}Link target does not exist!$reset"
   exit 1
 fi
-if [ -d $1 ]; then
+if [ -d "$1" ]; then
   run+="/J"
 else
   run+="/H"
 fi
-eval "$run $(realpath "$2" | winpath) $(realpath "$1" | winpath)\""
+eval "$run $(winpath "$2") $(winpath "$1")\""

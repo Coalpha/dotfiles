@@ -6,3 +6,4 @@ yarn-debug.log*
 yarn-error.log*
 # We don't wanna commit no' modules!
 node_modules/
+words.md
