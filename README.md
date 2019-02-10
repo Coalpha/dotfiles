@@ -1,8 +1,4 @@
-# .files
+# old dotfiles
 
-Since I use WSL for code, there's a lot of config files to make
-the enviornment (pun intended) cool and good.
-
-There's also a bin directory within this repo that stores some
-cool applications that I use. Most of them are made by me. Others,
-like colors, are not.
+I moved this to [ambient](https://github.com/Coalpha/ambient) which is a complete restructuring of how all of the files are stored.
+I'm going to keep this repository because there's a good chance that I'll screw something up and end up needing something in here.
